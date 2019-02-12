@@ -1,28 +1,28 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+import { Container, Header } from "semantic-ui-react"
+import { ApolloProvider } from "react-apollo"
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
-        </header>
-      </div>
-    );
-  }
+import client from "./graphql/"
+import { CartProvider } from "./Contexts/CartContext"
+import Products from "./components/products/"
+import Cart from "./components/cart/"
+
+import "semantic-ui-css/semantic.min.css"
+
+import "./App.css"
+
+const App = () => {
+  return (
+    <ApolloProvider client={client}>
+      <Container className="app">
+        <CartProvider>
+          <Cart />
+          <Header as="h2">Liste des produits</Header>
+          <Products />
+        </CartProvider>
+      </Container>
+    </ApolloProvider>
+  )
 }
 
-export default App;
+export default App
