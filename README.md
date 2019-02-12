@@ -23,7 +23,8 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 - There seem to be an issue with the semantic-ui-react Button.Content hitbox
   (adding not always work when not clicking right in the middle of the button)
 - Add missing tests for the components and queries
-- split concerns some concerns maybe (context, reducers...)
+- Split concerns some concerns maybe (context, reducers...)
+- Load css first
 - Better naming maybe :)
 
 ## Available Scripts
